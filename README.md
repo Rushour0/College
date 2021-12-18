@@ -1,4 +1,4 @@
-# OS-College
+# College
 
 
 
