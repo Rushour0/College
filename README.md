@@ -24,7 +24,8 @@ String
 ### Assignment 2
 
 Forking
-- [Forking code]()
-- [Forking code images]()
-  - [Image 1]()
-  - [Image 2]()
+- [Forking code](https://github.com/Rushour0/College/blob/main/OS/Code/2-forking.c)
+- Forking code images
+  - [Image 1](https://github.com/Rushour0/College/blob/main/OS/Images/2-forking-code-image-1.jpeg)
+  - [Image 2](https://github.com/Rushour0/College/blob/main/OS/Images/2-forking-code-image-2.jpeg)
+- [Forking output image](https://github.com/Rushour0/College/blob/main/OS/Images/2-forking-output-image.jpeg)
