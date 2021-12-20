@@ -29,3 +29,11 @@ Forking
   - [Image 1](https://github.com/Rushour0/College/blob/main/OS/Images/2-forking-code-image-1.jpeg)
   - [Image 2](https://github.com/Rushour0/College/blob/main/OS/Images/2-forking-code-image-2.jpeg)
 - [Forking output image](https://github.com/Rushour0/College/blob/main/OS/Images/2-forking-output-image.jpeg)
+
+
+## DS-II
+
+### Assignment 2
+
+Dictionary using BST
+- [Dictionary using BST code](https://github.com/Rushour0/College/blob/main/DS-II/Dictionary%20using%20BST%20LCA%202.cpp)
