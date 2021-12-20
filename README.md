@@ -35,7 +35,8 @@ Forking
 
 ### Assignment 2
 
-[Factorial code](https://github.com/Rushour0/College/blob/main/MA/factorial.asm)
+Factorial
+- [Factorial code](https://github.com/Rushour0/College/blob/main/MA/factorial.asm)
 
 
 ## DS-II
