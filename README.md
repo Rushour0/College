@@ -7,7 +7,7 @@ Codes written for college assignments
 
 ## OS
 
-### Assignment 1
+### - Assignment 1
 
 Calculator
 - [Calculator code](https://github.com/Rushour0/College/blob/main/OS/Code/1-calculator.sh)
