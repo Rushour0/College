@@ -33,8 +33,16 @@ Forking
 ### Assignment 3
 
 Threading
+
 - [Threading code](https://github.com/Rushour0/College/blob/main/OS/Code/3-threading.c)
+- Threading code images
+  - [Image 1](https://github.com/Rushour0/College/blob/main/OS/Images/3-threading-code-image-1.jpeg)
+  - [Image 2](https://github.com/Rushour0/College/blob/main/OS/Images/3-threading-code-image-2.jpeg)
+- [Threading output image](https://github.com/Rushour0/College/blob/main/OS/Images/3-threading-output-image.jpeg)
+
 - [Array addition threading code](https://github.com/Rushour0/College/blob/main/OS/Code/3-arrayaddition-threading.c)
+- [Array addition threading code image](https://github.com/Rushour0/College/blob/main/OS/Images/3-arrayaddition-threading-code-image.jpeg)
+- [Array addition threading output image](https://github.com/Rushour0/College/blob/main/OS/Images/3-arrayaddition-threading-output-image.jpeg)
 
 ## MA
 
