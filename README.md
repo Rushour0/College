@@ -1,4 +1,4 @@
-Check out our [telegram](https://t.me/CodingGeeks20)
+# Check out our [telegram](https://t.me/CodingGeeks20)
 
 # MIT WPU College 2nd year
 
