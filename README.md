@@ -44,4 +44,9 @@ Factorial
 ### Assignment 2
 
 Dictionary using BST
-- [Dictionary using BST code](https://github.com/Rushour0/College/blob/main/DS-II/Dictionary%20using%20BST%20LCA%202.cpp)
+- [Dictionary using BST code](https://github.com/Rushour0/College/blob/main/DS-II/Code/2-dictionary-bst.cpp)
+- Dictionary using BST images
+  - [First inorder](https://github.com/Rushour0/College/blob/main/DS-II/Images/2-dictionary-bst-output-image-1.jpeg)
+  - [First BFS](https://github.com/Rushour0/College/blob/main/DS-II/Images/2-dictionary-bst-output-image-2.jpeg)
+  - [Inorder after deleting key L](https://github.com/Rushour0/College/blob/main/DS-II/Images/2-dictionary-bst-output-image-3.jpeg)
+  - [Inorder after mirroring](https://github.com/Rushour0/College/blob/main/DS-II/Images/2-dictionary-bst-output-image-4.jpeg)
