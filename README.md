@@ -30,6 +30,11 @@ Forking
   - [Image 2](https://github.com/Rushour0/College/blob/main/OS/Images/2-forking-code-image-2.jpeg)
 - [Forking output image](https://github.com/Rushour0/College/blob/main/OS/Images/2-forking-output-image.jpeg)
 
+### Assignment 3
+
+Threading
+- [Threading code](https://github.com/Rushour0/College/blob/main/OS/Code/3-threading.c)
+- [Array addition threading code](https://github.com/Rushour0/College/blob/main/OS/Code/3-arrayaddition-threading.c)
 
 ## MA
 
