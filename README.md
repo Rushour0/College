@@ -57,6 +57,11 @@ Factorial
 
 ## DS-II
 
+### Assignment 1
+
+Binary Tree
+- [Binary Tree code](https://github.com/Rushour0/College/blob/main/DS-II/Code/1-binarytree.cpp)
+
 ### Assignment 2
 
 Dictionary using BST
@@ -66,3 +71,13 @@ Dictionary using BST
   - [First BFS](https://github.com/Rushour0/College/blob/main/DS-II/Images/2-dictionary-bst-output-image-2.jpeg)
   - [Inorder after deleting key L](https://github.com/Rushour0/College/blob/main/DS-II/Images/2-dictionary-bst-output-image-3.jpeg)
   - [Inorder after mirroring](https://github.com/Rushour0/College/blob/main/DS-II/Images/2-dictionary-bst-output-image-4.jpeg)
+
+### Assignment 3
+
+Threaded Binary Tree
+- [Threaded Binary Tree code](https://github.com/Rushour0/College/blob/main/DS-II/Code/3-threadedbinarytree.cpp)
+
+### Assignment 4
+
+Graph
+- [Graph code](https://github.com/Rushour0/College/blob/main/DS-II/Code/4-facebook-graph.cpp)
