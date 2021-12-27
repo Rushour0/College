@@ -57,7 +57,18 @@ Array addition threading
 ### Assignment 2
 
 Factorial
-- [Factorial code](https://github.com/Rushour0/College/blob/main/MA/factorial.asm)
+- [Factorial code](https://github.com/Rushour0/College/blob/main/MA/Code/2-factorial.asm)
+
+### Assignment 3
+
+Table values
+- [Table Values code](https://github.com/Rushour0/College/blob/main/MA/Code/3-table-values.asm)
+
+
+### Assignment 5
+Addition of numbers using array in ASM
+- [Addition of numbers code - hardcoded](https://github.com/Rushour0/College/blob/main/MA/Code/5-arrayaddition-hardcoded.asm)
+- [Addition of numbers code - hardcoded](https://github.com/Rushour0/College/blob/main/MA/Code/5-arrayaddition-input.asm)
 
 
 ## DS-II
