@@ -6,6 +6,17 @@
 
 Codes written for college assignments
 
+## OOP
+
+### Assignment 3
+
+Company inheritance
+- [Company inheritance code](https://github.com/Rushour0/College/blob/main/OOP/Code/3-company-inheritance.cpp)
+
+### Assignment 4
+
+Box operators
+- [Box operator code](https://github.com/Rushour0/College/blob/main/OOP/Code/4-box-operator.cpp)
 
 ## OS
 
