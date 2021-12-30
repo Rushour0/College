@@ -11,18 +11,19 @@ Roll no.: PG19
 #define clrscr system("clear || cls");
 
 // Structure Process - Defintion
-struct Process {
+typedef struct {
     int pid, at, bt, ct, tat, wt;
-};
+} Process;
 
 // Structure Process related functions
-void readJobs(struct Process*, int);
-void calculateJobs(struct Process*, int);
-void displayJobs(struct Process*, int);
+void readJobs(Process*, int);
+void calculateJobs(Process*, int);
+void displayJobs(Process*, int);
 
 // Helper function declarations
-void sortByArrivalTime(struct Process*, int);
-void swapNum(struct Process* ,int, int);
+void sortByArrivalTime(Process*, int);
+void sortByBurstTimeRemaining(Process*, int, int);
+void swapNum(Process* ,int, int);
 
 // main function - driver code
 int main()
@@ -33,7 +34,7 @@ int main()
     // Take input
     printf("Enter the number of processes : ");
     scanf("%d", &n);
-    struct Process jobs[n];
+    Process jobs[n];
 
     // Reading at & bt
     readJobs(jobs, n);
@@ -52,7 +53,7 @@ int main()
 }
 
 // Function definition - readJobs
-void readJobs(struct Process *jobs, int n)
+void readJobs(Process *jobs, int n)
 {
     for( int i = 0; i < n; i++ )
     {
@@ -68,14 +69,29 @@ void readJobs(struct Process *jobs, int n)
 }
 
 // Function defintion - calculateJobs
-void calculateJobs(struct Process *jobs, int n)
+void calculateJobs(Process *jobs, int n)
 {
-    int current_ct = 0;
-
+    Process temps[n];
     for( int i = 0; i < n; i++ )
     {
-        
-        
+        temps[i].at = jobs[i].at;
+        temps[i].bt = jobs[i].bt;
+        temps[i].pid = jobs[i].pid;
+        temps[i].ct = jobs[i].ct;
+        temps[i].wt = jobs[i].wt;
+        temps[i].tat = jobs[i].tat;
+    }
+
+    int current, current_ct = 0;
+
+    for( int i = 0; i < n-1; i++)
+    {
+        current = temps[i+1].at - temps[i].at;
+        if ( >  
+    }
+
+    for( int i = 0; i < n; i++ )
+    {   
         if ( i > 0 && jobs[i-1].ct > jobs[i].at )
             current_ct = current_ct + jobs[i].bt;
         else
@@ -89,7 +105,7 @@ void calculateJobs(struct Process *jobs, int n)
 }
 
 // Function definition - displayJobs
-void displayJobs(struct Process *jobs, int n)
+void displayJobs(Process *jobs, int n)
 {
     int tat_avg = 0;
     int wt_avg = 0;
@@ -106,6 +122,7 @@ void displayJobs(struct Process *jobs, int n)
     line line
 
     // Graphical form
+    
     printf("Graphical form");line
     for( int i = 0; i < n; i++ )
     {
@@ -114,6 +131,7 @@ void displayJobs(struct Process *jobs, int n)
         printf("\tP%d\t",jobs[i].pid);
     }
     line
+
     printf("||0|");
     for( int i = 0; i < n; i++ )
     {
@@ -129,7 +147,7 @@ void displayJobs(struct Process *jobs, int n)
 }
 
 // Function definition - sortByArrivalTime
-void sortByArrivalTime(struct Process *jobs, int n)
+void sortByArrivalTime(Process *jobs, int n)
 {
 	for (int i = 0; i < n; i++)
 		for (int j = i; j < n; j++)
@@ -140,38 +158,9 @@ void sortByArrivalTime(struct Process *jobs, int n)
 }
 
 // Function definition - swapNum
-void swapNum(struct Process *jobs,int p1, int p2)
+void swapNum(Process *jobs,int p1, int p2)
 {
-	struct Process temp = jobs[p1];
+	Process temp = jobs[p1];
 	jobs[p1] =  jobs[p2];
 	jobs[p2] = temp;
 }
-
-// Inputs
-/*
-4
-0
-7
-2
-4
-4
-1
-5
-4
-
-*/
-
-/*
-5
-0
-3
-1
-1
-2
-2
-7
-4
-8
-2
-
-*/
