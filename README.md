@@ -86,6 +86,9 @@ Addition of numbers using array in ASM
 - [Addition of numbers code - hardcoded](https://github.com/Rushour0/College/blob/main/MA/Code/5-arrayaddition-hardcoded.asm)
 - [Addition of numbers code - hardcoded](https://github.com/Rushour0/College/blob/main/MA/Code/5-arrayaddition-input.asm)
 
+### Assignment 6
+Sorting of numbers using array in ASM
+- [Sorting of numbers code - hardcoded](https://github.com/Rushour0/College/blob/main/MA/Code/6-sort-hardcoded.asm)
 
 ## DS-II
 
