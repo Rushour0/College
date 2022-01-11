@@ -46,7 +46,6 @@ class Queue
     // Class function members
     int dequeue();
     void enqueue(int item);
-    int peek();
     int size();
     bool isempty();
     bool isfull();
@@ -56,8 +55,8 @@ class Queue
 Queue::Queue(int size)
 {
     capacity = size;
-    front = -1;
-    rear = -1;
+    front = 0;
+    rear = size - 1;
     count = 0;
 }
 
@@ -65,9 +64,13 @@ Queue::Queue(int size)
 int Queue::dequeue()
 {
     if ( isempty() )
+    {
         cout << "Underflow\nProgram Terminated\n";
-    
-    int x = arr[++front];
+        return 0;
+    }
+
+    int x = arr[front];
+    front = (front + 1) % capacity;
     count--;
     return x;
 }
@@ -79,7 +82,8 @@ void Queue::enqueue(int item)
         cout << "Overflow\nProgram Terminated\n";
     else
     {
-        arr[++rear] = item;
+        rear = (rear + 1) % capacity;
+        arr[rear] = item;
         count++;
     }
 }
@@ -99,6 +103,44 @@ bool Queue::isfull() {
     return (size() == capacity);
 }
 
+
+// Class Stack
+class Stack
+{
+    int top;
+    int data[SIZE];
+
+    public:
+        Stack()
+        {
+            top = -1;
+        }
+
+        // Class function declarations
+        void push(int);
+        int pop();
+        bool empty();
+
+};
+
+// Class function definition - push
+void Stack::push(int temp)
+{
+    data[++top] = temp;
+}
+
+// Class function definition - pop
+int Stack::pop(){
+    return data[top--];
+}
+
+// Class function definition - empty
+bool Stack::empty()
+{  
+    if (top == -1) return true;
+    return false;
+}
+
 // Class Graph
 class Graph
 {
@@ -109,8 +151,6 @@ class Graph
     int *visited;
     
     public:
-
-
 
     // Default constructor
 	Graph()
@@ -131,6 +171,7 @@ class Graph
     void bfs(int v);
     void dfs();
     void dfs(int v);
+    void adjacenyShow();
 };        
 
 // Class function definition - create
@@ -138,23 +179,38 @@ void Graph::create()
 {
     int v;
     Gnode *curr;
+    Gnode *temp2;
     char choice;
     
     for (int i = 0; i < n; i++ )
     {
         temp = head[i];
+        while( temp->next != nullptr )
+            temp = temp->next;
         do
         {
             cout << "Enter adjacent node for " << i << ": ";
             cin >> v;
             if( v == i )
                 cout << "Self loop are not allowed" << endl;
+            else if ( v > n )
+                cout << "Node number out of range!" << endl;
             else
             {
                 curr = new Gnode();
                 curr->vertex = v;
                 temp->next = curr;
                 temp = temp->next;
+
+                // Undirected graph - reverse node connectivity
+                temp2 = head[v];
+                while( temp2->next != nullptr )
+                    temp2 = temp2->next;
+
+                curr = new Gnode();
+                curr->vertex = i;
+                temp2->next = curr;
+
             }
             cout << "Continue adding adjacent nodes? (y/n): ";
             cin >> choice;
@@ -174,7 +230,7 @@ void Graph::bfs(int v)
 	while( !q.isempty() )
 	{
 		v = q.dequeue();
-        visited[v] = 1;
+        visited[v] = true;
         temp = head[v]->next;
 		while( temp != nullptr )
         {
@@ -183,12 +239,11 @@ void Graph::bfs(int v)
             {
                 cout << " -> " << w;
                 q.enqueue(w);
-                visited[w] = 1;
+                visited[w] = true;
             }
             temp = temp->next;
         }
 	}
-    free(visited);
 }
 
 // Class function definition - dfs
@@ -211,17 +266,33 @@ void Graph::dfs(int v)
 {
     Gnode *temp;
     int w;
-    if( !visited[v] )
+    if ( !visited[v] )
         cout << " -> " << v;
     visited[v] = true;
 
     temp = head[v]->next;
-    while( temp != nullptr )
+    while ( temp != nullptr )
     {
         w = temp->vertex;
-        if( !visited[w] )
+        if ( !visited[w] )
             dfs(w);
         temp = temp->next;
+    }
+}
+
+// Class function definition - adjacencyShow
+void Graph::adjacenyShow()
+{
+    for( int i = 0; i < n; i++)
+    {
+        temp = head[i]->next;
+        cout << "Head \"" << i << "\" -> ";
+        while ( temp != nullptr )
+        {
+            cout << temp->vertex << " -> ";
+            temp = temp->next;
+        }
+        cout << "nullptr" << endl;
     }
 }
 
@@ -242,9 +313,10 @@ int main()
 	{   
         clrscr
         cout << "\tEnter your choice" << endl;
-		cout << "1)BFS" << endl;
-		cout << "2)DFS" << endl;
-        cout << "3)Exit" << endl;
+		cout << "1)Show Graph" << endl;
+        cout << "2)BFS" << endl;
+		cout << "3)DFS" << endl;
+        cout << "4)Exit" << endl;
         cout << "Enter choice option : ";
 		
         // Taking option input
@@ -255,6 +327,12 @@ int main()
 		{
 
             case 1:
+                cout << "Adjacency list form of the Graph" << endl << endl;
+                graph.adjacenyShow();
+                cout << endl;
+                break;
+            
+            case 2:
                 cout << "Enter node to start the BFS from: ";
                 cin >> v;
                 cout << "BFS is:" << endl << v;
@@ -262,11 +340,11 @@ int main()
                 cout << endl;
                 break;
 
-            case 2:
+            case 3:
                 graph.dfs();
                 break;
             
-            case 3:
+            case 4:
                 cout << "Exiting..." << endl;
                 clrscr
                 exit(0);
@@ -278,7 +356,7 @@ int main()
 
         cout << "Press any key to continue..." << endl;
         cin >> random;
-	} while( op != 3 );
+	} while( true );
     return 0;
 }
 
@@ -297,5 +375,17 @@ y
 3
 n
 3
+n
+*/
+
+/*
+4
+1
+n
+2
+n
+3
+n
+1
 n
 */
