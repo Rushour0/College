@@ -16,12 +16,19 @@ class Gnode
 {   
     int vertex;
     Gnode *next;
+    string name;
     friend class Graph;
 
     public:
     Gnode()
     {
         next = nullptr;
+    }
+
+    Gnode( string myname )
+    {
+        next = nullptr;
+        name = myname;
     }
 };
 
@@ -103,7 +110,6 @@ bool Queue::isfull() {
     return (size() == capacity);
 }
 
-
 // Class Stack
 class Stack
 {
@@ -148,6 +154,7 @@ class Graph
 	
 	int n;
     Gnode **head, *temp;
+    string *names;
     int *visited;
     
     public:
@@ -155,19 +162,26 @@ class Graph
     // Default constructor
 	Graph()
 	{   
+        string tempname;
         cout << "Enter number of nodes in the graph: ";
         cin >> n;
         head = new Gnode*[n];
         visited = new int[n];
+        names = new string[n];
         for ( int i = 0; i < n; i++ )
         {
-            head[i] = new Gnode();
+            cout << "Enter name for person \"" << i << "\": ";
+            cin >> tempname ;
+            head[i] = new Gnode(tempname);
+            names[i] = tempname;
             head[i]->vertex = i;
+
         }
 	}
 
     // Class member functions
     void create();
+    void bfs();
     void bfs(int v);
     void dfs();
     void dfs(int v);
@@ -197,7 +211,7 @@ void Graph::create()
                 cout << "Node number out of range!" << endl;
             else
             {
-                curr = new Gnode();
+                curr = new Gnode(head[v]->name);
                 curr->vertex = v;
                 temp->next = curr;
                 temp = temp->next;
@@ -207,7 +221,7 @@ void Graph::create()
                 while( temp2->next != nullptr )
                     temp2 = temp2->next;
 
-                curr = new Gnode();
+                curr = new Gnode(head[i]->name);
                 curr->vertex = i;
                 temp2->next = curr;
 
@@ -219,6 +233,16 @@ void Graph::create()
 }
 
 // Class function definition - bfs
+void Graph::bfs()
+{
+    int v;
+    cout << "Enter node to start the BFS from: ";
+    cin >> v;
+    cout << "BFS is:" << endl << v << "( " << head[v]->name << " )";
+    bfs(v);
+    cout << endl;
+}
+// Class function definition - bfs - override
 void Graph::bfs(int v)
 {
     for(int i = 0; i < n; i++ )
@@ -237,7 +261,7 @@ void Graph::bfs(int v)
             w = temp->vertex;
             if( !visited[w] )
             {
-                cout << " -> " << w;
+                cout << " -> " << w << "( " << temp->name << " )";
                 q.enqueue(w);
                 visited[w] = true;
             }
@@ -255,7 +279,7 @@ void Graph::dfs()
     int v;
     cout << "Enter node to start the DFS from: ";
     cin >> v;
-    cout << "DFS is" << endl << v;
+    cout << "DFS is" << endl << v << "( " << head[v]->name << " )";
     visited[v] = true;
     dfs(v);
     cout << endl;
@@ -267,7 +291,7 @@ void Graph::dfs(int v)
     Gnode *temp;
     int w;
     if ( !visited[v] )
-        cout << " -> " << v;
+        cout << " -> " << v << "( " << head[v]->name << " )";
     visited[v] = true;
 
     temp = head[v]->next;
@@ -286,10 +310,10 @@ void Graph::adjacenyShow()
     for( int i = 0; i < n; i++)
     {
         temp = head[i]->next;
-        cout << "Head \"" << i << "\" -> ";
+        cout << "Head \"" << i << "( " << head[i]->name << " )\" -> ";
         while ( temp != nullptr )
         {
-            cout << temp->vertex << " -> ";
+            cout << temp->vertex << "( " << temp->name << " ) -> ";
             temp = temp->next;
         }
         cout << "nullptr" << endl;
@@ -333,11 +357,7 @@ int main()
                 break;
             
             case 2:
-                cout << "Enter node to start the BFS from: ";
-                cin >> v;
-                cout << "BFS is:" << endl << v;
-                graph.bfs(v);
-                cout << endl;
+                graph.bfs();
                 break;
 
             case 3:
@@ -380,6 +400,10 @@ n
 
 /*
 4
+water
+air
+fire
+earth
 1
 n
 2
