@@ -48,6 +48,10 @@ Forking
 FCFS
 - [FCFS code](https://github.com/Rushour0/College/blob/main/OS/Code/3-fcfs.c)
 
+### Assignment 5
+Banker's Algorithm
+- [Banker code](https://github.com/Rushour0/College/blob/main/OS/Code/5-banker.cpp)
+
 ### Assignment 6
 
 Threading main
