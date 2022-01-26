@@ -1,4 +1,11 @@
-#include<iostream>
+/*
+Name: Rushikesh Patade
+Panel: G
+Batch: G2
+Roll no.: PG19
+*/
+
+#include <iostream>
 using namespace std;
 
 #define clrscr system("cls || clear");
@@ -6,11 +13,10 @@ using namespace std;
 // Class Box
 class Box
 {
-    private:
-    double l,b,h;
-    
-    public:
+private:
+    double l, b, h;
 
+public:
     // Default constructor
     Box()
     {
@@ -20,17 +26,16 @@ class Box
     }
 
     // Class member functions
-    Box operator +(Box B);
+    Box operator+(Box B);
 
     // Friend functions
-    friend ostream& operator << ( ostream&, Box& );
-    friend istream& operator >> ( istream&, Box& );
-    friend double volume( Box );
-
+    friend ostream &operator<<(ostream &, Box &);
+    friend istream &operator>>(istream &, Box &);
+    friend double volume(Box);
 };
 
 // Class operator function definition - operator +
-Box Box::operator + ( Box B )
+Box Box::operator+(Box B)
 {
     Box b1;
     b1.l = l + B.l;
@@ -38,15 +43,15 @@ Box Box::operator + ( Box B )
     b1.h = h + B.h;
     return b1;
 }
+
 // Function definition - volume
-double volume( Box box )
+double volume(Box box)
 {
-    
-    return ( box.l * box.b * box.h );
+    return (box.l * box.b * box.h);
 }
 
 // Function definition - operator >> - overloading
-istream & operator  >> ( istream &in, Box &box )
+istream &operator>>(istream &in, Box &box)
 {
     in >> box.l;
     in >> box.b;
@@ -55,7 +60,7 @@ istream & operator  >> ( istream &in, Box &box )
 }
 
 // Function definition - operator << - overloading
-ostream & operator << ( ostream &out, Box &box )
+ostream &operator<<(ostream &out, Box &box)
 {
     out << "LENGHT: " << box.l << "\n";
     out << "BREADTH: " << box.b << "\n";
@@ -66,18 +71,23 @@ ostream & operator << ( ostream &out, Box &box )
 // main function - driver code
 int main()
 {
-    // Box instances
-    Box B1, B2, B3;
+    clrscr
+        // Box instances
+        Box B1,
+        B2, B3;
 
     cout << "\nENTER L,B,H OF BOX 1: \n";
     cin >> B1;
     cout << "\nDETAILS OF BOX 1: \n";
     cout << B1;
+
     cout << "\nENTER L,B,H OF BOX 2: \n";
     cin >> B2;
     cout << "\nDETAILS OF BOX 2: \n";
     cout << B2;
+
     B3 = B1 + B2;
+
     cout << "\nDETAILS OF BOX 3: \n";
     cout << B3;
     cout << "\nVOLUME OF BOX 1: " << volume(B1) << "\n";
