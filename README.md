@@ -120,3 +120,8 @@ Threaded Binary Tree
 
 Graph
 - [Graph code](https://github.com/Rushour0/College/blob/main/DS-II/Code/4-facebook-graph.cpp)
+
+### Assignment 5
+
+Prims Algorithm
+- [Prims Algorithm code](https://github.com/Rushour0/College/blob/main/DS-II/Code/6-database.cpp)
