@@ -124,4 +124,9 @@ Graph
 ### Assignment 5
 
 Prims Algorithm
-- [Prims Algorithm code](https://github.com/Rushour0/College/blob/main/DS-II/Code/6-database.cpp)
+- [Prims Algorithm code](https://github.com/Rushour0/College/blob/main/DS-II/Code/5-prim-algorithm.cpp)
+
+### Assignment 6
+
+Heap
+- [Heap code](https://github.com/Rushour0/College/blob/main/DS-II/Code/6-heap.cpp)
