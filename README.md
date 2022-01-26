@@ -18,6 +18,22 @@ Company inheritance
 Box operators
 - [Box operator code](https://github.com/Rushour0/College/blob/main/OOP/Code/4-box-operator.cpp)
 
+### Assignment 5
+
+Virtual Salary
+- [Virtual Salary code](https://github.com/Rushour0/College/blob/main/OOP/Code/5-virtual-salary.cpp)
+
+### Assignment 6
+
+Database
+- [Database code](https://github.com/Rushour0/College/blob/main/OOP/Code/6-database.cpp)
+
+### Assignment 7
+
+Template Sort
+- [Template Sort code](https://github.com/Rushour0/College/blob/main/OOP/Code/7-template-bubble.cpp)
+
+
 ## OS
 
 ### Assignment 1
