@@ -88,6 +88,16 @@ Array addition threading
 - [Array addition threading code image](https://github.com/Rushour0/College/blob/main/OS/Images/3-arrayaddition-threading-code-image.jpeg)
 - [Array addition threading output image](https://github.com/Rushour0/College/blob/main/OS/Images/3-arrayaddition-threading-output-image.jpeg)
 
+### Assignment 7
+
+FIFO Page Replacement
+- [FIFO Page Replacement code](https://github.com/Rushour0/College/blob/main/OS/Code/7-fifo_page.c)
+
+### Assignment 8
+
+LRU Page Replacement
+- [LRU Page Replacement code](https://github.com/Rushour0/College/blob/main/OS/Code/8-lru_page.c)
+
 ## MA
 
 ### Assignment 1
